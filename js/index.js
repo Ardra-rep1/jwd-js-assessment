@@ -168,7 +168,16 @@ window.addEventListener('DOMContentLoaded', () => {
          //  console.log(resLength);
           if (quizItem.a == res[resLength - 1]) {
             score += 20;
-          }  
+          } 
+          else {
+            //console.log(str);
+            const selected = document.querySelector('#'+ str);
+            //console.log(selected);
+            parentElem = selected.parentElement;
+            console.log(parentElem);
+            parentElem.style.backgroundColor = 'red';
+
+          } 
       }
       }
     });
