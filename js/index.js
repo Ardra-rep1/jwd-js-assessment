@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const submitFunction = function(){
       const totalScore = calculateScore();
       const score = document.querySelector('#score');
-      let correct =0;
+      let correct = 0;
       let wrong = 0;
      //console.log(totalScore);   
       switch(totalScore){
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
      score.innerHTML = `<p class='m-3'>YOU GOT ${totalScore}% MARKS!!</p>
                           <p class='m-3 text-success'>Correct Answers: ${correct}</p>
                           <p class='m-3 text-danger'>Wrong Answers: ${wrong}</p>`;
-
+    clearInterval(countDownTime);
     const quizWrap = document.querySelector('#quizWrap');
     quizWrap.style.pointerEvents = "none";
   };
@@ -155,6 +155,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (quizItem.a == i) {
           //change background color of li element here
           liElement.style.backgroundColor = 'green'; // answers are highlighting here
+          liElement.style.transitionDuration = '1s'; 
         }
         if (radioElement.checked) {
           // code for task 1 goes here
@@ -174,8 +175,9 @@ window.addEventListener('DOMContentLoaded', () => {
             const selected = document.querySelector('#'+ str);
             //console.log(selected);
             parentElem = selected.parentElement;
-            console.log(parentElem);
+           //console.log(parentElem);
             parentElem.style.backgroundColor = 'red';
+            parentElem.style.transitionDuration = '2s'; 
 
           } 
       }
